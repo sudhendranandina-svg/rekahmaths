@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abacus Training - Abacus & Vedic Maths Aspirants</title>
+    <style>
+/* Inline site CSS (essential subset) */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary-color:#2C73D2;--secondary-color:#FFA41B;--accent-color:#6DD47E;--background-color:#F8F9FA;--text-color:#333;--white:#fff;--light-gray:#E9ECEF;--dark-gray:#6C757D;--gradient:linear-gradient(135deg,#2C73D2 0%,#6DD47E 100%)}
+body{font-family:'Open Sans',sans-serif;line-height:1.6;color:var(--text-color);background:var(--background-color)}
+h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;font-weight:600;margin-bottom:1rem}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.header{background:var(--gradient);position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+.navbar{padding:1rem 0}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-text{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;color:var(--white)}
+.nav-menu{display:flex;list-style:none;gap:2rem}
+.nav-link{color:var(--white);text-decoration:none;font-weight:500;transition:.3s;padding:.5rem 1rem;border-radius:25px}
+.nav-link:hover,.nav-link.active{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+.hamburger{display:none;flex-direction:column;cursor:pointer}
+.bar{width:25px;height:3px;background:var(--white);margin:3px 0;transition:.3s;border-radius:3px}
+/* Page hero */
+.page-hero{background:var(--gradient);color:var(--white);padding:120px 0 80px;overflow:hidden}
+.page-hero .container{max-width:1200px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.page-hero-content h1{font-size:3rem;font-weight:700;margin-bottom:1rem;line-height:1.2}
+.page-subtitle{font-size:1.3rem;margin-bottom:2rem;opacity:.9}
+.course-highlights{display:flex;gap:2rem;flex-wrap:wrap}
+.highlight-item{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.2);padding:.5rem 1rem;border-radius:25px;font-weight:500}
+/* Sections */
+.section-title{text-align:center;font-size:2.5rem;color:var(--primary-color);margin:3rem 0}
+.course-details{padding:80px 0;background:var(--white)}
+.details-grid{display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start}
+.details-content .lead{font-size:1.2rem;line-height:1.8;margin-bottom:3rem;color:var(--dark-gray)}
+.benefits-list{display:flex;flex-direction:column;gap:2rem}
+.benefit-item{display:flex;gap:1.5rem;align-items:flex-start}
+.benefit-icon{width:60px;height:60px;background:var(--gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff}
+.benefit-content h3{color:var(--primary-color);margin-bottom:.5rem}
+.course-info-card{background:var(--background-color);padding:2.5rem;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1);position:sticky;top:100px}
+.course-info-card h3{color:var(--primary-color);font-size:1.8rem;margin-bottom:2rem;text-align:center}
+.info-item{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--light-gray)}
+.info-item:last-of-type{border-bottom:none}
+.info-item strong{color:var(--primary-color)}
+.info-item span{color:var(--text-color);font-weight:500}
+.cta-section{padding:80px 0;background:var(--gradient);color:#fff;text-align:center}
+.cta-content h2{font-size:2.5rem;margin-bottom:1rem}
+.cta-content p{font-size:1.2rem;margin-bottom:2rem;opacity:.9}
+.cta-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.cta-button{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border:none;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1.1rem;cursor:pointer;transition:.3s;text-decoration:none;text-align:center}
+.cta-button.primary{background:var(--secondary-color);color:#fff}
+.cta-button.primary:hover{background:#e8930f;transform:translateY(-3px);box-shadow:0 10px 25px rgba(255,164,27,.4)}
+.cta-button.secondary{background:transparent;color:var(--primary-color);border:2px solid var(--primary-color)}
+.cta-button.secondary:hover{background:var(--primary-color);color:#fff;transform:translateY(-3px)}
+.footer{background:var(--gradient);color:#fff;padding:60px 0 20px}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-bottom:2rem}
+.footer-section h3,.footer-section h4{margin-bottom:1rem}
+.footer-section ul{list-style:none}
+.footer-section ul li{margin-bottom:.5rem}
+.footer-section a{color:#fff;text-decoration:none;opacity:.8;transition:opacity .3s}
+.footer-section a:hover{opacity:1}
+.social-links{display:flex;gap:1rem;margin-top:1rem}
+.social-links a{width:40px;height:40px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
+.social-links a:hover{background:var(--secondary-color);transform:translateY(-3px)}
+.footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.2);opacity:.8}
+@media (max-width:768px){.hamburger{display:flex}.nav-menu{position:fixed;left:-100%;top:70px;flex-direction:column;background:var(--gradient);width:100%;text-align:center;transition:.3s;box-shadow:0 10px 27px rgba(0,0,0,.05);padding:2rem 0}.nav-menu.active{left:0}.page-hero .container{grid-template-columns:1fr;text-align:center;gap:2rem}.page-hero-content h1{font-size:2.2rem}.details-grid{grid-template-columns:1fr}.cta-buttons{flex-direction:column;align-items:center}.cta-button{width:100%;max-width:300px}}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-text">Abacus & Vedic Maths Aspirants</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="abacus.html" class="nav-link active">Abacus</a></li>
+                    <li class="nav-item"><a href="vedic-maths.html" class="nav-link">Vedic Maths</a></li>
+                    <li class="nav-item"><a href="curriculum-maths.html" class="nav-link">Curriculum</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Book a Free Trial</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Abacus Training</h1>
+                <p class="page-subtitle">Build Strong Math Foundations with Ancient Wisdom</p>
+                <div class="course-highlights">
+                    <span class="highlight-item"><i class="fas fa-users"></i> Ages 6-12 years</span>
+                    <span class="highlight-item"><i class="fas fa-clock"></i> 10 levels (1-2.5 years)</span>
+                    <span class="highlight-item"><i class="fas fa-dollar-sign"></i> $12 per session</span>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Course Details -->
+    <section class="course-details">
+        <div class="container">
+            <div class="details-grid">
+                <div class="details-content">
+                    <h2>What Makes Abacus Special?</h2>
+                    <p class="lead">The abacus is more than just a calculation tool – it's a brain development system that has been proven to enhance mathematical abilities and cognitive skills in children.</p>
+                    
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Learn 0-99 on Fingers</h3>
+                                <p>Master mental calculations using finger techniques that make math visual and intuitive.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-foundation"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Strong Foundation in Maths</h3>
+                                <p>Build unshakeable mathematical foundations that support all future learning.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Improves Focus & Creativity</h3>
+                                <p>Enhance concentration, memory, and creative thinking through structured practice.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Boosts Confidence</h3>
+                                <p>Build self-confidence as children master increasingly complex calculations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Enhances Academic Performance</h3>
+                                <p>Improve overall academic performance through better concentration and logical thinking.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-info-card">
+                    <h3>Course Information</h3>
+                    <div class="info-item">
+                        <strong>Age Group:</strong>
+                        <span>6-12 years</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Duration:</strong>
+                        <span>10 levels (1-2.5 years)</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Fee:</strong>
+                        <span>$12 per session</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Format:</strong>
+                        <span>Online & In-person (Auckland)</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Class Size:</strong>
+                        <span>Small groups (max 6 students)</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Materials:</strong>
+                        <span>Abacus kit provided</span>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <button class="cta-button primary" onclick="selectCourse('abacus'); window.location.href='contact.html';">
+                            <i class="fas fa-calendar-check"></i>
+                            Book Free Trial
+                        </button>
+                        <a href="contact.html" class="cta-button secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get More Info
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Journey -->
+    <section class="learning-journey">
+        <div class="container">
+            <h2 class="section-title">Learning Journey</h2>
+            <div class="journey-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Foundation (Levels 1-3)</h3>
+                        <p>Introduction to abacus, basic bead movements, and simple addition/subtraction.</p>
+                        <span class="timeline-duration">3-6 months</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Intermediate (Levels 4-6)</h3>
+                        <p>Advanced calculations, multiplication, division, and mental math development.</p>
+                        <span class="timeline-duration">6-9 months</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Advanced (Levels 7-10)</h3>
+                        <p>Complex calculations, speed building, and competition preparation.</p>
+                        <span class="timeline-duration">9-12 months</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-content">
+                        <h3>Emma, Age 8</h3>
+                        <p>"I can now calculate faster than my calculator! My friends are amazed when I solve math problems in my head."</p>
+                        <div class="story-achievement">
+                            <i class="fas fa-medal"></i>
+                            <span>Completed Level 5 in 8 months</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-content">
+                        <h3>Ryan, Age 10</h3>
+                        <p>"Math used to be scary, but now it's my favorite subject. I even help my older sister with her homework!"</p>
+                        <div class="story-achievement">
+                            <i class="fas fa-trophy"></i>
+                            <span>Won school math competition</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-content">
+                        <h3>Sophia, Age 9</h3>
+                        <p>"I love the clicking sounds of the abacus beads. It makes math feel like a fun game!"</p>
+                        <div class="story-achievement">
+                            <i class="fas fa-star"></i>
+                            <span>Improved school grades by 2 levels</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is the ideal age to start abacus training?</h3>
+                    <p>Children between 6-12 years old benefit most from abacus training as their brains are most receptive to developing new neural pathways during this period.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do I need to buy an abacus?</h3>
+                    <p>No, we provide a high-quality abacus kit as part of the course materials. This ensures all students learn with the same standardized tool.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How long does it take to see results?</h3>
+                    <p>Most children show noticeable improvement in calculation speed and accuracy within 2-3 months of regular practice.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is online learning as effective as in-person?</h3>
+                    <p>Yes! Our online classes are interactive and engaging, with small group sizes ensuring personalized attention for each student.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What if my child struggles with the concepts?</h3>
+                    <p>We provide individualized support and adjust the pace according to each child's learning speed. No child is left behind!</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Are there any competitions or certifications?</h3>
+                    <p>Yes, we prepare students for various abacus competitions and provide certificates upon completion of each level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Unlock Your Child's Math Potential?</h2>
+                <p>Join hundreds of students who have transformed their relationship with mathematics through abacus training.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary" onclick="selectCourse('abacus'); window.location.href='contact.html';">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Free Trial Class
+                    </button>
+                    <a href="index.html" class="cta-button secondary">
+                        <i class="fas fa-home"></i>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Abacus & Vedic Maths Aspirants</h3>
+                    <p>"Your little ones make big wonders in maths"</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/abacusvedicaspirants" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="mailto:abucasaspirants@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+6421083502010"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="abacus.html">Abacus Training</a></li>
+                        <li><a href="vedic-maths.html">Vedic Maths</a></li>
+                        <li><a href="curriculum-maths.html">Curriculum Maths</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: abucasaspirants@gmail.com</p>
+                    <p>Phone: +64 21 083 50210</p>
+                    <p>Location: Auckland, New Zealand</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Special Offers</h4>
+                    <p>✓ Free Trial Classes</p>
+                    <p>✓ Crash Courses during holidays</p>
+                    <p>✓ Online & In-person options</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Abacus & Vedic Maths Aspirants. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// Inline JS
+const hamburger=document.querySelector('.hamburger');const navMenu=document.querySelector('.nav-menu');if(hamburger&&navMenu){hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');navMenu.classList.toggle('active')});document.querySelectorAll('.nav-link').forEach(n=>n.addEventListener('click',()=>{hamburger.classList.remove('active');navMenu.classList.remove('active')}))}
+let slideIndex=1;function currentSlide(n){showSlides(slideIndex=n)}function showSlides(n){const s=document.getElementsByClassName('testimonial-slide');const d=document.getElementsByClassName('nav-dot');if(n>s.length){slideIndex=1}if(n<1){slideIndex=s.length}for(let i=0;i<s.length;i++){s[i].classList.remove('active')}for(let i=0;i<d.length;i++){d[i].classList.remove('active')}if(s[slideIndex-1]){s[slideIndex-1].classList.add('active')}if(d[slideIndex-1]){d[slideIndex-1].classList.add('active')}}
+function autoSlide(){slideIndex++;if(slideIndex>document.getElementsByClassName('testimonial-slide').length){slideIndex=1}showSlides(slideIndex)}if(document.getElementsByClassName('testimonial-slide').length>0){setInterval(autoSlide,5000)}
+function createScrollTopButton(){const b=document.createElement('button');b.className='scroll-top';b.innerHTML='<i class="fas fa-arrow-up"></i>';b.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});document.body.appendChild(b);window.addEventListener('scroll',()=>{if(window.pageYOffset>300){b.classList.add('visible')}else{b.classList.remove('visible')}})}
+function initScrollAnimations(){const o={threshold:.1,rootMargin:'0px 0px -50px 0px'};const ob=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible')}})},o);document.querySelectorAll('.course-card, .teacher-content, .testimonials-carousel').forEach(el=>{el.classList.add('fade-in');ob.observe(el)})}
+function updateActiveNavLink(){const c=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.nav-link').forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')===c||(c===''&&l.getAttribute('href')==='index.html')){l.classList.add('active')}})}
+function selectCourse(courseName){const courseSelect=document.getElementById('course');if(courseSelect){courseSelect.value=courseName}}
+document.addEventListener('DOMContentLoaded',function(){createScrollTopButton();initScrollAnimations();updateActiveNavLink();document.querySelectorAll('.course-link').forEach(link=>{link.addEventListener('click',function(e){const n=this.closest('.course-card').querySelector('h3').textContent.toLowerCase().replace(' ','-');localStorage.setItem('selectedCourse',n)})});const sc=localStorage.getItem('selectedCourse');if(sc){const cs=document.getElementById('course');if(cs){const m={'abacus-training':'abacus','vedic-maths':'vedic','curriculum-maths':'curriculum'};cs.value=m[sc]||''}localStorage.removeItem('selectedCourse')}});
+    </script>
+</body>
+</html>
